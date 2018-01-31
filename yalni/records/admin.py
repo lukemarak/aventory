@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Assembled
+
+class AssembledAdmin(admin.ModelAdmin):
+    list_display = ['customer', 'chasis', 'motherboard', 'configuration', 'entered']
+admin.site.register(Assembled, AssembledAdmin)
